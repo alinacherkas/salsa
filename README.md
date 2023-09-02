@@ -1,6 +1,9 @@
 # SALSA
 Selection of Adjusted Litter Scene Annotations (SALSA) is a new image dataset for object detection that focuses on litter. This dataset is currently under active development.
 
+> [!NOTE]
+> This branch is a work in progress. Any data contained in this branch should not be considered as final. This version of the dataset will be released when all changes will be finalised and the branch will be merged into the `main` branch.
+
 ## Overview
 
 SALSA is designed to further research in the area of computer vision for litter detection. The dataset is a mix of selected and adjusted annotations of images from [TACO](http://tacodataset.org) and new annotations of images from [OpenLitterMap](https://openlittermap.com). SALSA contains 2569 images with 8356 annotations for objects across 10 categories. Images represent a diverse set of litter objects in the wild, i.e., outdoor images of litter in various natural environments. The annotations are provided in [COCO format](https://cocodataset.org/#format-data) in [annotations.json](annotations.json). Images are distributed via Azure Blob Storage (in West Europe Region). SALSA is made available under the [Open Database License](https://github.com/alinacherkas/salsa/blob/version-1/LICENSE.md).
