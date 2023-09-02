@@ -1,2 +1,30 @@
-# salsa
-Selection of Adjusted Litter Scene Annotations (SALSA) is a new image dataset for object detection that focuses on litter. This dataset is currently under active development. Visit [version-1](https://github.com/alinacherkas/salsa/tree/version-1) branch for more details.
+# SALSA
+Selection of Adjusted Litter Scene Annotations (SALSA) is a new image dataset for object detection that focuses on litter. This dataset is currently under active development.
+
+## Overview
+
+SALSA is designed to further research in the area of computer vision for litter detection. The dataset is a mix of selected and adjusted annotations of images from [TACO](http://tacodataset.org) and new annotations of images from [OpenLitterMap](https://openlittermap.com). SALSA contains 2569 images with 8356 annotations for objects across 10 categories. Images represent a diverse set of litter objects in the wild, i.e., outdoor images of litter in various natural environments. The annotations are provided in [COCO format](https://cocodataset.org/#format-data) in [annotations.json](annotations.json).
+
+## Descriptive Statistics
+
+Out of 2569 images in the dataset, about 48% come directly from TACO while the rest are new images obtained from OpenLitterMap. For all TACO images, bounding boxes were checked and adjusted if needed, while categories were manually recoded and validated according to the new label scheme with 10 categories. About 59% of annotations appear in newly annotated images from OpenLitterMap. The distribution of objects across the 10 classes is shown below.
+
+![Figure 1. Distribution of Annountations Across Categories](https://github.com/alinacherkas/salsa/assets/51997505/cae06bd9-aec8-4e81-ad2f-afdca7a748aa)
+
+Litter objects in images appear in different positions and various sizes. The distribution of bounding box areas across by object category is displayed in the figure below.
+
+![Figure 2. Normalised Distribution of Bounding Box Areas by Category](https://github.com/alinacherkas/salsa/assets/51997505/ad74c5d0-5cc7-4cff-8ca3-8ef07e180c3c)
+
+
+### Comparison with TACO
+
+| Criterion | TACO  | SALSA |
+| - | ------------- | ------------- |
+|Year| 2020  | 2023  |
+|Number of Images| 1500 (official version)  | 2569 (1325 taken from TACO and 1244 collected from OpenLitterMap)  |
+|Number of Annotations|4784|8356 (3396 adjusted from/added to TACO and 4960 annotated from OpenLitterMap)|
+|Number of Categories|60|10|
+|Number of Supercategories|28|1|
+|Bounding Boxes|Yes|Yes|
+|Instance Segmentation|Yes|Not yet|
+|Source of Annotations|Crowdsourced|Manually Curated|
