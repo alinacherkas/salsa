@@ -13,7 +13,10 @@ def write_splits(
         test_size: int = 300,
         val_size: int = 300,
         seed: int = None
-):
+) -> bool:
+    """
+    Write YOLO-style files that contain paths to train/val/test images.
+    """
     image_paths = sorted(Path(image_dir).glob('*.jpeg'))
     if seed is not None:
         random.seed(seed)
@@ -31,9 +34,13 @@ def write_splits(
             for image_path in image_paths[start:end]:
                 file.write(str(image_path) + '\n')
         print(f'Created {file_path} with {len(image_paths[start:end])} image paths')
-    
-    
-def write_labels(annotations: dict, output_dir: str, exclude_category_ids: list[int] = None):
+    return True
+
+
+def write_labels(annotations: dict, output_dir: str, exclude_category_ids: list[int] = None) -> bool:
+    """
+    Write YOLO-style label files.
+    """
     if os.path.exists(output_dir):
         raise Exception('Directory already exists.')
     os.mkdir(output_dir)
@@ -57,7 +64,10 @@ def write_labels(annotations: dict, output_dir: str, exclude_category_ids: list[
     return True
 
 
-def write_yaml(annotations: dict, output_dir: str):
+def write_yaml(annotations: dict, output_dir: str) -> bool:
+    """
+    Write a config YAML file for SALSA.
+    """
     file_path = os.path.join(output_dir, 'salsa.yaml')
     config = {
         'path': './salsa',
@@ -71,3 +81,4 @@ def write_yaml(annotations: dict, output_dir: str):
     }
     with open(file_path, 'w') as file:
         yaml.dump(config, file, sort_keys=False)
+    return True

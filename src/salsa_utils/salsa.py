@@ -8,7 +8,14 @@ from .transform import convert_to_yolo
 from .write import write_labels, write_splits, write_yaml
 
 
-def prepare_salsa(output_dir: str = 'datasets'):
+def prepare_salsa(output_dir: str = 'datasets') -> bool:
+    """
+    Run all stages of data preparation to create the dataset in YOLO format.
+
+    This is the main function that allows to create a version of the dataset
+    suitable for object detection with YOLO. The function downloads images,
+    formats labels and splits as well as create a config YAML file.
+    """
     salsa_dir = os.path.join(output_dir, 'salsa')
     os.makedirs(salsa_dir)
 

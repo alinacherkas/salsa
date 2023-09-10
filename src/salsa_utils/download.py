@@ -7,6 +7,9 @@ from tqdm import tqdm
 
 
 def download_images(annotations: dict, output_dir: str) -> bool:
+    """
+    Download SALSA images from the Azure Storage account to your local machine.
+    """
     if os.path.exists(output_dir):
         raise Exception('Directory already exists.')
     os.mkdir(output_dir)
