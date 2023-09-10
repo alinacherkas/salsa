@@ -8,6 +8,31 @@ SALSA is designed to further research in the area of computer vision for litter 
 > [!IMPORTANT]  
 >  I do not own the copyright of the images distributed via the Blob Storage. Use of the images must abide by respective image licenses specified for each image in [annotations.json](./src/salsa_utils/data/annotations.json). The users of the images accept full responsibility for the use of the dataset, including but not limited to the use of any copies of copyrighted images that they may create from the dataset.
 
+## Getting Started
+
+`salsa-utils` is a Python package designed to facilite work with SALSA dataset. You can install the package from GitHub using
+
+```bash
+pip install git+https://github.com/alinacherkas/salsa.git
+```
+
+You can either use Python or CLI interface to download the complete dataset in YOLO format with just a couple of lines of code.
+
+```python
+import salsa_utils as salsa
+
+# transform annotations, download images, write labels and dataset config file all in one go
+salsa.prepare_salsa()
+```
+
+Alternatively, you can run the below code from the command line to achieve the same result:
+
+```bash
+python -m salsa_utils
+```
+
+By default, data is saved to `./datasets` while `salsa.yaml` is written to the current working directory.
+
 ## Descriptive Statistics
 
 Out of 2569 images in the dataset, about 48% come directly from TACO while the rest are new images obtained from OpenLitterMap. For all TACO images, bounding boxes were checked and adjusted if needed, while categories were manually recoded and validated according to the new label scheme with 10 categories. About 59% of annotations appear in newly annotated images from OpenLitterMap. The distribution of objects across the 10 classes is shown below.
