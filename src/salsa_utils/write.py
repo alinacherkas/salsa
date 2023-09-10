@@ -3,6 +3,9 @@ import os
 import random
 from pathlib import Path
 
+# utils
+import yaml
+
 
 def write_splits(
         image_dir: str,
@@ -52,3 +55,19 @@ def write_labels(annotations: dict, output_dir: str, exclude_category_ids: list[
             x, y, w, h = annotation['bbox']
             file.write(f'{category_id} {x} {y} {w} {h}\n')
     return True
+
+
+def write_yaml(annotations: dict, output_dir: str):
+    file_path = os.path.join(output_dir, 'salsa.yaml')
+    config = {
+        'path': './salsa',
+        'train': 'image_paths_train.txt',
+        'val': 'image_paths_val.txt',
+        'test': 'image_paths_test.txt'
+    }
+    config['names'] = {
+        category['id']: category['name'] for 
+        category in annotations['categories']
+    }
+    with open(file_path, 'w') as file:
+        yaml.dump(config, file, sort_keys=False)
