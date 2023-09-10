@@ -37,11 +37,12 @@ By default, data is saved to `./datasets` while `salsa.yaml` is written to the c
 
 Out of 2569 images in the dataset, about 48% come directly from TACO while the rest are new images obtained from OpenLitterMap. For all TACO images, bounding boxes were checked and adjusted if needed, while categories were manually recoded and validated according to the new label scheme with 10 categories. About 59% of annotations appear in newly annotated images from OpenLitterMap. The distribution of objects across the 10 classes is shown below.
 
-![Figure 1. Distribution of Annountations Across Categories](https://github.com/alinacherkas/salsa/assets/51997505/cae06bd9-aec8-4e81-ad2f-afdca7a748aa)
+
+![Figure 1. Distribution of Annountations Across Categories](https://github.com/alinacherkas/salsa/assets/51997505/a586a1d2-912c-4b84-956e-dd5cea3334ef)
 
 Litter objects in images appear in different positions and various sizes. The distribution of bounding box areas across by object category is displayed in the figure below.
 
-![Figure 2. Normalised Distribution of Bounding Box Areas by Category](https://github.com/alinacherkas/salsa/assets/51997505/ad74c5d0-5cc7-4cff-8ca3-8ef07e180c3c)
+![Figure 2. Normalised Distribution of Bounding Box Areas by Category](https://github.com/alinacherkas/salsa/assets/51997505/9ddd259f-7208-4563-8b47-0d1705dd57d6)
 
 
 ### Comparison with TACO
@@ -60,4 +61,4 @@ Litter objects in images appear in different positions and various sizes. The di
 
 ### Examples
 
-![Figure 3. Examples of Annotated Images](https://github.com/alinacherkas/salsa/assets/51997505/8705c8d8-78da-48fc-80ee-9ebd22f1b0d8)
+![Figure 3. Examples of Annotated Images](https://github.com/alinacherkas/salsa/assets/51997505/22f1ac55-e430-4265-b4c8-785bcfbce08a)
